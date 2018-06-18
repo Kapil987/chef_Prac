@@ -1,0 +1,27 @@
+#!/bin/bash
+######################################
+#Version: 1.0
+#Input	: None
+#Output	: None
+######################################
+
+###### The if MYSTERY SOLVED ########
+
+if [[ "$2" ]];then
+echo " the if part if is true "
+else
+echo "the else part  "
+fi
+
+if [[ -z "$2" ]];then
+echo " the if having -z part if is true "
+else
+echo "the else part having -z "
+fi
+
+############################# NOTES #########################
+#if only senses whether the given expression is NULL or not
+#you can check this by running the script as 
+#./scriptname arg1 arg2
+#if [ arg'n is NULL ] is equivalent to if [ False ] so else
+#part gets executed
