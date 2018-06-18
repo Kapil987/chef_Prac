@@ -19,6 +19,14 @@ else
 echo "the else part having -z "
 fi
 
+#if [[ $1 == 5 -a $2 == 6 ]]; then # -a shows syntax error && should be used instead of -a two chk two expr
+if [[ 1 && 1 ]]; then 		# you put what ever 1 1 or 0 0 as the ouput will be non NULL it will show alway true
+#if [[ -z $1 && -z $2 ]]; then
+echo "condition true if block"
+else
+echo "else block"
+fi
+
 ############################# NOTES #########################
 #if only senses whether the given expression is NULL or not
 #you can check this by running the script as 
