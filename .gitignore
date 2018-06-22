@@ -1,3 +1,5 @@
+#from older git_Prac
+*.org
 # Chef
 .chef/*.pem
 .chef/encrypted_data_bag_secret
