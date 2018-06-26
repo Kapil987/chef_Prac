@@ -3,7 +3,7 @@
 # Recipe:: default
 #
 # Copyright:: 2018, The Authors, All Rights Reserved.
-
+# simple install without attributes
 package 'httpd' #by default action is to install
   service 'httpd' do
   action [:enable,:start] 
