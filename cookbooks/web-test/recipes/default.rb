@@ -4,23 +4,23 @@
 #
 # Copyright:: 2018, The Authors, All Rights Reserved.
 
-package 'httpd' do
-  action :install
-end
-service 'httpd' do
-  action :start
-end
-service 'httpd' do
-  action :enable
+#setting up local attributes
+package_name = 'httpd'
+service_name = 'httpd'
+document_root = '/var/www/html'
+
+package package_name 
+service service_name do 
+action [:enable, :start]
 end
 service 'firewalld' do
   action [ :stop, :disable ]
 end
 
-file '/var/www/html/index.html' do
+file "#{document_root}/index.html" do #concatination used
   owner 'apache'
   group 'apache'
   mode '0644'
-  content 'Welcome to Apache'
+  content 'Welcome to Apache with attributes'
   action :create
 end
