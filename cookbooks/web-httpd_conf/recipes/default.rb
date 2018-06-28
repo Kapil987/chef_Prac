@@ -5,7 +5,7 @@
 # Copyright:: 2018, The Authors, All Rights Reserved.
 package node['package_name']
 service node['service_name'] do
-  supports :status => true, :restart => true, :reload => true
+  supports status: true, restart: true, reload: true
   action [:enable, :start]
 end
 
@@ -19,5 +19,5 @@ template '/etc/httpd/conf/httpd.conf' do
   owner 'apache'
   group 'apache'
   source 'httpd.conf.erb' # content changed to source
-  notifies :restart, 'resource[httpd]', :delayed
+  notifies :restart, 'service[httpd]', :immediate
 end
