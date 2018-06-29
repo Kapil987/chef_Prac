@@ -3,13 +3,14 @@
 # Recipe:: default
 #
 # Copyright:: 2018, The Authors, All Rights Reserved.
-
+# varname = data_bag_item(databagname,key)
+userdata = data_bag_item('ratan_secrets', 'ratan')
 group 'steel' do
   action :create
 end
 
 user 'ratan' do
-  password '$1$tata$3qsaTRC.H2dIu7JpS3gTM0'
+  password userdata['password']
   group 'steel'
   home '/home/ratan'
   shell '/bin/bash'
